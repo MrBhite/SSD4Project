@@ -1,39 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="BookManageSystem.controller.LogupFrameController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BookManageSystem.controller.LogupFrameController">
     <children>
         <VBox prefHeight="393.0" prefWidth="600.0">
             <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
+                  <ImageView fitHeight="65.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="-15.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image>
+                  </ImageView>
                         <Label fx:id="systemLabel" text="图书管理系统">
                             <font>
-                                <Font name="System Bold" size="40.0"/>
+                                <Font name="System Bold" size="40.0" />
                             </font>
                         </Label>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Label fx:id="userNameLabel" text="用户名："/>
-                        <TextField fx:id="userNameTextField"/>
+                  <ImageView fitHeight="18.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/userName.png" />
+                     </image>
+                  </ImageView>
+                        <Label fx:id="userNameLabel" text="用户名：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                        <TextField fx:id="userNameTextField" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
-                        <Label fx:id="passwordLabel" text="密   码："/>
-                        <PasswordField fx:id="passwordTextField"/>
+                  <ImageView fitHeight="31.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/password.png" />
+                     </image>
+                  </ImageView>
+                        <Label fx:id="passwordLabel" text="密   码：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                        <PasswordField fx:id="passwordTextField" />
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0">
                     <children>
-                        <Button fx:id="logupButton" mnemonicParsing="false" onAction="#logupButtonEvent" text="登录"/>
-                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetButtonEvent" text="重置"/>
+                        <Button fx:id="logupButton" mnemonicParsing="false" onAction="#logupButtonEvent" stylesheets="@../general.css" text="登录">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="6.0" right="6.0" top="5.0" />
+                     </padding></Button>
+                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetButtonEvent" stylesheets="@../general.css" text="重置">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="6.0" right="6.0" top="5.0" />
+                     </padding></Button>
                     </children>
                 </HBox>
             </children>

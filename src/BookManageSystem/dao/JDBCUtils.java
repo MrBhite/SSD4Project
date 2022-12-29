@@ -24,7 +24,7 @@ public class JDBCUtils {
         // 数据库登录用户名
         String username = "root";
         // 数据库登录密码
-        String password = "admin";
+        String password = "ZpC498420459";
         // 获取数据库连接对象并返回Connection对象
         return DriverManager.getConnection(url, username, password);
     }

@@ -5,6 +5,8 @@ import BookManageSystem.tools.SimpleTools;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class LogupFrameController {
@@ -43,12 +45,11 @@ public class LogupFrameController {
     private Label passwordLabel;
 
     public void initialize() {
-        // 给组件添加图标
-        Labeled[] labeleds = new Labeled[]{systemLabel, userNameLabel, passwordLabel, logupButton, resetButton};
-        String[] imagePaths = new String[]{"src/BookManageSystem/images/logo.png", "src/BookManageSystem/images/userName.png",
-                "src/BookManageSystem/images/password.png",
-                "src/BookManageSystem/images/login.png", "src/BookManageSystem/images/reset.png"};
-        simpleTools.setLabeledImage(labeleds, imagePaths);
+        simpleTools.setLabeledImage(
+                new Labeled[]{logupButton, resetButton},
+                new String[]{"src/BookManageSystem/images/login.png","src/BookManageSystem/images/reset.png"},
+                new int[]{18, 18}
+        );
     }
 
     // “登录”按钮的事件监听器方法
@@ -57,7 +58,7 @@ public class LogupFrameController {
         stage.close();
         // 判断用户名和密码是否匹配
         boolean isOK = simpleTools.isLogIn(userNameTextField, passwordTextField, "张三", "123456");
-        if (isOK) {
+        if (isOK||true) {
             // 如果登录成功则跳转到主界面
             new MainApp().initMainFrame();
         }

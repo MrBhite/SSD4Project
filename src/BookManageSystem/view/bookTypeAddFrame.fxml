@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="BookManageSystem.controller.BookTypeAddFrameController">
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BookManageSystem.controller.BookTypeAddFrameController">
     <children>
         <VBox alignment="CENTER" prefHeight="700.0" prefWidth="800.0" spacing="30.0">
             <children>
@@ -12,27 +14,39 @@
                     <children>
                         <Label prefHeight="51.0" prefWidth="322.0" text="图书类别添加功能">
                             <font>
-                                <Font name="System Bold" size="40.0"/>
+                                <Font name="System Bold" size="40.0" />
                             </font>
                         </Label>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                     <children>
-                        <Label text="图书类别名称："/>
-                        <TextField fx:id="bookTypeNameTextField"/>
+                        <Label text="图书类别名称：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                        <TextField fx:id="bookTypeNameTextField">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
                     </children>
                 </HBox>
                 <HBox alignment="TOP_CENTER" prefHeight="144.0" prefWidth="600.0" spacing="30.0">
                     <children>
-                        <Label text="图书类别描述："/>
-                        <TextArea fx:id="bookTypeDescriptionTextArea" prefHeight="200.0" prefWidth="200.0"/>
+                        <Label text="图书类别描述：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                        <TextArea fx:id="bookTypeDescriptionTextArea" prefHeight="200.0" prefWidth="200.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextArea>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="80.0">
                     <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#do_addButton_event" text="添加"/>
-                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#do_resetButton_event" text="重置"/>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#do_addButton_event" stylesheets="@../general.css" text="添加" />
+                        <Button fx:id="resetButton" mnemonicParsing="false" onAction="#do_resetButton_event" stylesheets="@../general.css" text="重置" />
                     </children>
                 </HBox>
             </children>

@@ -45,8 +45,10 @@ public class BookAddFrameController {
      */
     public void initialize() {
         // 批量为按钮添加图标
-        simpleTools.setLabeledImage(new Labeled[]{addButton, resetButton}, new String[]{"src/BookManageSystem/images/add.png",
-                "src/BookManageSystem/images/reset.png"});
+        simpleTools.setLabeledImage(new Labeled[]{addButton, resetButton},
+                new String[]{"src/BookManageSystem/images/add.png","src/BookManageSystem/images/reset.png"},
+                new int[]{20,20}
+        );
         // 查询所有图书类别的SQL语句
         String getBookTypeSQL = "select * from tb_booktype";
         // 获取所有图书类别的数据

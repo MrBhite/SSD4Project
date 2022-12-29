@@ -13,6 +13,7 @@ import javafx.scene.control.*;
  * @author lck100
  */
 public class BookTypeManageFrameController {
+    public Button checkButton;
     private SimpleTools simpleTools = new SimpleTools();
     private BookTypeDao bookTypeDao = new BookTypeDao();
 
@@ -51,7 +52,10 @@ public class BookTypeManageFrameController {
      */
     public void initialize() {
         // 批量为按钮添加图标
-        simpleTools.setLabeledImage(new Labeled[]{alterButton, deleteButton}, new String[]{"src/BookManageSystem/images/edit.png", "src/BookManageSystem/images/delete.png"});
+        simpleTools.setLabeledImage(new Labeled[]{alterButton, deleteButton, checkButton},
+                new String[]{"src/BookManageSystem/images/edit.png", "src/BookManageSystem/images/delete.png", "src/BookManageSystem/images/find.png"},
+                new int[]{20,20,20}
+        );
         // 设置显示id的文本框不可编辑
         idTextField.setEditable(false);
         // 查询所有的图书类别列的SQL语句
@@ -63,6 +67,11 @@ public class BookTypeManageFrameController {
                 , bookTypeNameColumn
                 , bookTypeDescriptionTableColumn
         );
+
+        //设置两个居中
+        bookTypeManageTableView.getColumns().get(0).setStyle("-fx-alignment: CENTER;");
+        bookTypeManageTableView.getColumns().get(1).setStyle("-fx-alignment: CENTER;");
+
         // 为表格控件注册事件监听器
         bookTypeManageTableView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showBookTypeDetails(newValue));

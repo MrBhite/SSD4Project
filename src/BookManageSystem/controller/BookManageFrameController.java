@@ -6,6 +6,7 @@ import BookManageSystem.dao.BookDao;
 import BookManageSystem.dao.BookTypeDao;
 import BookManageSystem.tools.SimpleTools;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -94,9 +95,12 @@ public class BookManageFrameController {
      */
     public void initialize() {
         // 批量为按钮添加图标
-        simpleTools.setLabeledImage(new Labeled[]{alterButton, delteButton, resetButton2}, new String[]{"src/BookManageSystem/images/edit" +
-                ".png",
-                "src/BookManageSystem/images/delete.png", "src/BookManageSystem/images/reset.png"});
+        simpleTools.setLabeledImage(
+                new Labeled[]{alterButton, delteButton, resetButton2},
+                new String[]{"src/BookManageSystem/images/edit.png",
+                "src/BookManageSystem/images/delete.png", "src/BookManageSystem/images/reset.png"},
+                new int[]{15,15,15}
+        );
         // 设置显示id号的文本框不可编辑
         idTextField.setDisable(true);
         // 查询图书信息的SQL语句
@@ -112,6 +116,12 @@ public class BookManageFrameController {
                 , bookDescriptionTableColumn
                 , bookTypeTableColumn
         );
+
+        for(int i =0;i<7; i++){
+            if(i!=5){
+                bookManageTableView.getColumns().get(i).setStyle("-fx-alignment: CENTER;");
+            }
+        }
 
         // 查询图书类别的SQL语句
         String getBookTypeSQL = "select * from tb_booktype";

@@ -1,53 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<AnchorPane prefHeight="750.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="BookManageSystem.controller.MainFrameController">
+
+<AnchorPane prefHeight="750.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BookManageSystem.controller.MainFrameController">
     <children>
         <MenuBar prefHeight="37.0" prefWidth="800.0">
             <menus>
                 <Menu mnemonicParsing="false" text="图书类别管理">
                     <items>
-                        <MenuItem fx:id="bookTypeAddMenuItem" mnemonicParsing="false"
-                                  onAction="#do_bookTypeAddMenuItem_event" text="图书类别添加"/>
-                        <MenuItem fx:id="bookTypeManageMenuItem" mnemonicParsing="false"
-                                  onAction="#do_bookTypeManageMenuItem_event" text="图书类别维护"/>
+                        <MenuItem fx:id="bookTypeAddMenuItem" mnemonicParsing="false" onAction="#do_bookTypeAddMenuItem_event" text="图书类别添加" />
+                        <MenuItem fx:id="bookTypeManageMenuItem" mnemonicParsing="false" onAction="#do_bookTypeManageMenuItem_event" text="图书类别维护" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="图书管理">
                     <items>
-                        <MenuItem fx:id="bookAddMenuItem" mnemonicParsing="false" onAction="#do_bookAddMenuItem_event"
-                                  text="图书添加"/>
-                        <MenuItem fx:id="bookManageMenuItem" mnemonicParsing="false"
-                                  onAction="#do_bookManageMenuItem_event" text="图书维护"/>
+                        <MenuItem fx:id="bookAddMenuItem" mnemonicParsing="false" onAction="#do_bookAddMenuItem_event" text="图书添加" />
+                        <MenuItem fx:id="bookManageMenuItem" mnemonicParsing="false" onAction="#do_bookManageMenuItem_event" text="图书维护" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="其他">
                     <items>
-                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#do_exitMenuItem_vent"
-                                  text="退出"/>
-                        <MenuItem fx:id="aboutSoftMenuItem" mnemonicParsing="false"
-                                  onAction="#do_aboutSoftMenuItem_event" text="关于软件"/>
+                        <MenuItem fx:id="exitMenuItem" mnemonicParsing="false" onAction="#do_exitMenuItem_vent" text="退出" />
+                        <MenuItem fx:id="aboutSoftMenuItem" mnemonicParsing="false" onAction="#do_aboutSoftMenuItem_event" text="关于软件" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane fx:id="mainFrameAnchorPane" layoutY="37.0" prefHeight="663.0" prefWidth="800.0">
-            <children>
-                <HBox alignment="CENTER" prefHeight="663.0" prefWidth="800.0">
-                    <children>
-                        <ImageView fx:id="mainBookManageImageView" fitHeight="513.0" fitWidth="611.0"
-                                   pickOnBounds="true" preserveRatio="true">
-                            <image>
-                            </image>
-                        </ImageView>
-                    </children>
-                </HBox>
-            </children>
+        <AnchorPane fx:id="mainFrameAnchorPane" layoutY="37.0" prefHeight="713.0" prefWidth="800.0">
+         <children>
+            <ImageView fitHeight="713.0" fitWidth="800.0" layoutY="1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/background.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="14.0" layoutY="216.0" prefHeight="240.0" prefWidth="125.0">
+               <children>
+                  <Button fx:id="manageBtn" mnemonicParsing="false" onAction="#manageBtnDown" prefHeight="36.0" prefWidth="374.0" stylesheets="@../general.css" text="Manage">
+                     <VBox.margin>
+                        <Insets bottom="26.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="insertBtn" mnemonicParsing="false" onAction="#insertBtnDown" prefHeight="30.0" prefWidth="237.0" stylesheets="@../general.css" text="Insert">
+                     <VBox.margin>
+                        <Insets bottom="26.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="aboutBtn" mnemonicParsing="false" onAction="#aboutBtnDown" prefHeight="23.0" prefWidth="358.0" stylesheets="@../general.css" text="About">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="26.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#exitBtnDown" prefHeight="23.0" prefWidth="358.0" stylesheets="@../general.css" text="Exit">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox layoutX="175.0" layoutY="216.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="typeBtn" mnemonicParsing="false" onAction="#typeBtnDown" prefHeight="36.0" prefWidth="321.0" stylesheets="@../general.css" text="Type">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="26.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="bookBtn" mnemonicParsing="false" onAction="#bookBtnDown" prefHeight="36.0" prefWidth="382.0" stylesheets="@../general.css" text="Book">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
         </AnchorPane>
     </children>
 </AnchorPane>

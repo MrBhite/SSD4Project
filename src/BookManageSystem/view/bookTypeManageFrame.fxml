@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="BookManageSystem.controller.BookTypeManageFrameController">
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BookManageSystem.controller.BookTypeManageFrameController">
     <children>
         <VBox alignment="CENTER" prefHeight="700.0" prefWidth="800.0">
             <children>
@@ -13,66 +18,126 @@
                     <children>
                         <Label text="图书类别维护功能">
                             <font>
-                                <Font name="System Bold" size="40.0"/>
+                                <Font name="System Bold" size="40.0" />
                             </font>
                         </Label>
                     </children>
                 </HBox>
-                <HBox alignment="CENTER" prefHeight="111.0" prefWidth="600.0" spacing="30.0">
-                    <children>
-                        <Label text="图书类别名称："/>
-                        <TextField fx:id="bookTypeNameTextField"/>
-                        <Button fx:id="checkButton" mnemonicParsing="false" onAction="#do_checkButton_event" text="查询"/>
-                    </children>
-                </HBox>
                 <HBox alignment="CENTER" prefHeight="296.0" prefWidth="600.0">
                     <children>
-                        <TableView fx:id="bookTypeManageTableView" prefHeight="399.0" prefWidth="605.0"
-                                   tableMenuButtonVisible="true">
+                        <TableView fx:id="bookTypeManageTableView" prefHeight="399.0" prefWidth="605.0" tableMenuButtonVisible="true">
                             <columns>
-                                <TableColumn fx:id="idTableColumn" prefWidth="197.0" text="编号"/>
-                                <TableColumn fx:id="bookTypeNameColumn" minWidth="0.0" prefWidth="201.0" text="图书类别名称"/>
-                                <TableColumn fx:id="bookTypeDescriptionTableColumn" prefWidth="201.0" text="图书类别描述"/>
+                                <TableColumn fx:id="idTableColumn" prefWidth="85.0" text="编号" />
+                                <TableColumn fx:id="bookTypeNameColumn" minWidth="0.0" prefWidth="310.0" text="图书类别名称" />
+                                <TableColumn fx:id="bookTypeDescriptionTableColumn" prefWidth="198.0" text="图书类别描述" />
                             </columns>
                         </TableView>
                     </children>
                 </HBox>
-                <HBox alignment="CENTER" prefHeight="263.0" prefWidth="600.0">
+                <HBox alignment="CENTER" prefHeight="111.0" prefWidth="600.0" spacing="30.0">
                     <children>
-                        <VBox fx:id="formVBox" prefHeight="240.0" prefWidth="602.0">
+                  <Label text="查询图书" textFill="#00000040">
+                     <HBox.margin>
+                        <Insets left="-150.0" />
+                     </HBox.margin>
+                  </Label>
+                        <Label text="图书类别名称：">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                        <TextField fx:id="bookTypeNameTextField">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                        <Button fx:id="checkButton" mnemonicParsing="false" onAction="#do_checkButton_event" stylesheets="@../general.css" text="查询" />
+                    </children>
+                </HBox>
+            <HBox prefHeight="15.0" prefWidth="800.0">
+               <children>
+                  <Line endX="710.0" strokeWidth="2.0">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#03488c02" />
+                              <Stop color="#03488c4d" offset="0.15" />
+                              <Stop color="#03488c" offset="0.49608443990466466" />
+                              <Stop color="#03488c4d" offset="0.85" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Line>
+               </children>
+            </HBox>
+                <HBox alignment="CENTER" prefHeight="226.0" prefWidth="800.0">
+                    <children>
+                  <Label text="修改图书" textFill="#00000040">
+                     <HBox.margin>
+                        <Insets left="-80.0" right="50.0" />
+                     </HBox.margin>
+                  </Label>
+                        <VBox fx:id="formVBox" prefHeight="230.0" prefWidth="602.0">
                             <children>
                                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                                     <children>
-                                        <Label text="编号："/>
-                                        <TextField fx:id="idTextField" prefHeight="30.0" prefWidth="165.0"/>
-                                        <Label text="图书类别名称："/>
-                                        <TextField fx:id="bookTypeNameTextField2" prefHeight="30.0" prefWidth="174.0"/>
+                                        <Label text="编号：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                                        <TextField fx:id="idTextField" prefHeight="30.0" prefWidth="100.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></TextField>
+                                        <Label text="图书类别名称：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                                        <TextField fx:id="bookTypeNameTextField2" prefHeight="30.0" prefWidth="200.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></TextField>
                                     </children>
                                     <padding>
-                                        <Insets left="40.0"/>
+                                        <Insets left="40.0" />
                                     </padding>
+                           <VBox.margin>
+                              <Insets left="-0.0" />
+                           </VBox.margin>
                                 </HBox>
                                 <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                                     <children>
-                                        <Label text="描述："/>
-                                        <TextArea fx:id="descriptionTextArea" prefHeight="80.0" prefWidth="463.0"/>
+                                        <Label text="描述：">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                                        <TextArea fx:id="descriptionTextArea" prefHeight="80.0" prefWidth="463.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextArea>
                                     </children>
                                     <padding>
-                                        <Insets left="40.0"/>
+                                        <Insets left="40.0" />
                                     </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                                 </HBox>
                                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
                                     <children>
-                                        <Button fx:id="alterButton" mnemonicParsing="false"
-                                                onAction="#do_alterButton_event" text="修改"/>
-                                        <Button fx:id="deleteButton" mnemonicParsing="false"
-                                                onAction="#do_deleteButton_event" text="删除"/>
+                                        <Button fx:id="alterButton" mnemonicParsing="false" onAction="#do_alterButton_event" stylesheets="@../general.css" text="修改" />
+                                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#do_deleteButton_event" stylesheets="@../general.css" text="删除" />
                                     </children>
                                     <padding>
-                                        <Insets left="40.0"/>
+                                        <Insets left="40.0" />
                                     </padding>
                                 </HBox>
                             </children>
+                     <HBox.margin>
+                        <Insets left="-50.0" />
+                     </HBox.margin>
                         </VBox>
                     </children>
                 </HBox>

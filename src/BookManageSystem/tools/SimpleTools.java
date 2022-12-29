@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javax.swing.*;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,12 +24,20 @@ public class SimpleTools {
      * @param labeleds   需要设置图标的按钮
      * @param imagePaths 图标的路径
      */
-    public void setLabeledImage(Labeled[] labeleds, String[] imagePaths) {
+    public void setLabeledImage(Labeled[] labeleds, String[] imagePaths, int[] height) {
         for (int i = 0; i < labeleds.length; i++) {
-            labeleds[i].setGraphic(new ImageView(new Image("file:" + imagePaths[i])));
+            ImageView imageView = new ImageView(new Image("file:" + imagePaths[i]));
+            imageView.setFitHeight(height[i]);
+            imageView.setPreserveRatio(true);
+            labeleds[i].setGraphic(imageView);
         }
     }
-
+    public void setLabeledImage(Labeled[] labeleds, String[] imagePaths) {
+        for (int i = 0; i < labeleds.length; i++) {
+            ImageView imageView = new ImageView(new Image("file:" + imagePaths[i]));
+            labeleds[i].setGraphic(imageView);
+        }
+    }
     /**
      * 操作结果：清空文本框组件的内容
      *
@@ -75,6 +84,14 @@ public class SimpleTools {
         }
     }
 
+    public void setMenuItemImage(MenuItem[] menuItems, String[] imagePaths, int[]height) {
+        for (int i = 0; i < menuItems.length; i++) {
+            ImageView imageView = new ImageView(new Image("file:" + imagePaths[i]));
+            imageView.setFitHeight(height[i]);
+            imageView.setPreserveRatio(true);
+            menuItems[i].setGraphic(imageView);
+        }
+    }
     /**
      * 操作结果：JavaFX判断是否为空
      *

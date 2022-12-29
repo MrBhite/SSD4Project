@@ -23,8 +23,10 @@ public class BookTypeAddFrameController {
 
     public void initialize() {
         // 初始化按钮的图标
-        simpleTools.setLabeledImage(new Labeled[]{addButton, resetButton}, new String[]{"src/BookManageSystem/images/add.png",
-                "src/BookManageSystem/images/reset.png"});
+        simpleTools.setLabeledImage(new Labeled[]{addButton, resetButton},
+                new String[]{"src/BookManageSystem/images/add.png","src/BookManageSystem/images/reset.png"},
+                new int[]{20,20}
+        );
     }
 
     // “添加”按钮的事件监听器方法
