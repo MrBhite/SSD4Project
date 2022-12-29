@@ -4,10 +4,20 @@ import BookManageSystem.beans.BookTypeBean;
 import BookManageSystem.dao.BookDao;
 import BookManageSystem.dao.BookTypeDao;
 import BookManageSystem.tools.SimpleTools;
+import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.util.Duration;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookAddFrameController {
@@ -35,15 +45,30 @@ public class BookAddFrameController {
     private Button resetButton;
 
     @FXML
+    private HBox buttonPane;
+
+    @FXML
     private TextField bookNameTextField;
 
     @FXML
     private TextArea bookDescriptionTextArea;
 
+
+
     /**
      * 初始化界面控件数据
      */
     public void initialize() {
+
+        simpleTools.addEffect(resetButton ,1);
+        simpleTools.addEffect(addButton ,1);
+        simpleTools.addEffect(bookPriceTextField ,0);
+        simpleTools.addEffect(bookDescriptionTextArea ,0);
+        simpleTools.addEffect(bookAuthorTextField ,0);
+        simpleTools.addEffect(bookNameTextField ,0);
+
+
+
         // 批量为按钮添加图标
         simpleTools.setLabeledImage(new Labeled[]{addButton, resetButton}, new String[]{"src/BookManageSystem/images/add.png",
                 "src/BookManageSystem/images/reset.png"});

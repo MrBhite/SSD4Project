@@ -1,5 +1,6 @@
 package BookManageSystem.tools;
 
+import BookManageSystem.MainApp;
 import BookManageSystem.beans.BookBean;
 import BookManageSystem.beans.BookBeanTableData;
 import BookManageSystem.beans.BookTypeBean;
@@ -8,9 +9,13 @@ import BookManageSystem.dao.BookDao;
 import BookManageSystem.dao.BookTypeDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 
 import java.util.List;
 import java.util.Optional;
@@ -252,5 +257,11 @@ public class SimpleTools {
         return data;
     }
 
+
+
+    public void addEffect(Node node,int i){
+
+        MainApp.mainFrameController.addClickEffect(node,i);
+    }
 
 }

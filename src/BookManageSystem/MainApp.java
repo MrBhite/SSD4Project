@@ -1,6 +1,7 @@
 package BookManageSystem;
 
 import BookManageSystem.controller.LogupFrameController;
+import BookManageSystem.controller.MainFrameController;
 import BookManageSystem.controller.SoftInformationFrameController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import java.io.IOException;
 
 public class MainApp extends Application {
 
+    public static MainFrameController mainFrameController;
     private Stage primaryStage;
 
     @Override
@@ -63,7 +65,7 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("view/mainFrame.fxml"));
             AnchorPane root = loader.load();
-
+            mainFrameController = loader.getController();
             // 设置stage舞台的属性
             Stage mainFrameStage = new Stage();
             mainFrameStage.setTitle("图书管理系统主界面");
