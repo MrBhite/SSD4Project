@@ -13,6 +13,7 @@ import javafx.scene.control.*;
  * @author lck100
  */
 public class BookTypeManageFrameController {
+
     private SimpleTools simpleTools = new SimpleTools();
     private BookTypeDao bookTypeDao = new BookTypeDao();
 
@@ -27,6 +28,7 @@ public class BookTypeManageFrameController {
 
     @FXML
     private Button deleteButton;
+
     @FXML
     private Button checkButton;
 

@@ -64,6 +64,7 @@ public class MainFrameController {
      * 初始化启动
      */
     public void initialize() {
+
         // 为菜单项添加图标
         simpleTools.setMenuItemImage(
                 new MenuItem[]{bookTypeAddMenuItem, bookTypeManageMenuItem, bookAddMenuItem,
@@ -88,6 +89,14 @@ public class MainFrameController {
         isManage = false;
 
         addClickEffect(mainPane,0);
+        addClickEffect(manageBtn,1);
+        addClickEffect(insertBtn,1);
+        addClickEffect(aboutBtn,1);
+        addClickEffect(exitBtn,1);
+        addClickEffect(typeBtn,1);
+        addClickEffect(bookBtn,1);
+
+
     }
 
     /**
