@@ -22,6 +22,10 @@ public class BookTypeAddFrameController {
     private Button resetButton;
 
     public void initialize() {
+        simpleTools.addEffect(addButton,1);
+        simpleTools.addEffect(resetButton,1);
+        simpleTools.addEffect(bookTypeDescriptionTextArea,0);
+        simpleTools.addEffect(bookTypeNameTextField,0);
         // 初始化按钮的图标
         simpleTools.setLabeledImage(new Labeled[]{addButton, resetButton},
                 new String[]{"src/BookManageSystem/images/add.png","src/BookManageSystem/images/reset.png"},

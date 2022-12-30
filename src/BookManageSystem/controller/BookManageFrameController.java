@@ -94,6 +94,20 @@ public class BookManageFrameController {
      * 初始化图书维护界面控件
      */
     public void initialize() {
+        simpleTools.addEffect(alterButton,1);
+        simpleTools.addEffect(resetButton,1);
+        simpleTools.addEffect(resetButton2,1);
+        simpleTools.addEffect(checkButton,1);
+        simpleTools.addEffect(delteButton,1);
+        simpleTools.addEffect(bookAuthorTextField,0);
+        simpleTools.addEffect(bookAuthorTextField2,0);
+        simpleTools.addEffect(bookNameTextField,0);
+        simpleTools.addEffect(bookNameTextField2,0);
+        simpleTools.addEffect(bookDescriptionTextArea,0);
+        simpleTools.addEffect(idTextField,0);
+        simpleTools.addEffect(priceTextField,0);
+        simpleTools.addEffect(bookManageTableView,0);
+
         // 批量为按钮添加图标
         simpleTools.setLabeledImage(
                 new Labeled[]{alterButton, delteButton, resetButton2},

@@ -1,5 +1,6 @@
 package BookManageSystem.controller;
 
+import BookManageSystem.tools.SimpleTools;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
@@ -31,6 +32,7 @@ public class SoftInformationFrameController {
 
     @FXML // 初始化界面
     public void initialize() {
+
         // 初始化链接组件的超链接
         hyperlink.setText("相关GitHub链接");
         // 设置图片

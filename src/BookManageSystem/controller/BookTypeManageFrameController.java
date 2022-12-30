@@ -28,6 +28,8 @@ public class BookTypeManageFrameController {
 
     @FXML
     private Button deleteButton;
+    @FXML
+    private Button checkButton;
 
     @FXML
     private TableView<BookTypeBeanTableData> bookTypeManageTableView;
@@ -51,6 +53,14 @@ public class BookTypeManageFrameController {
      * 初始化界面数据
      */
     public void initialize() {
+        simpleTools.addEffect(alterButton,1);
+        simpleTools.addEffect(deleteButton,1);
+        simpleTools.addEffect(checkButton,1);
+        simpleTools.addEffect(bookTypeManageTableView,0);
+        simpleTools.addEffect(bookTypeNameTextField,0);
+        simpleTools.addEffect(bookTypeNameTextField2,0);
+        simpleTools.addEffect(idTextField,0);
+        simpleTools.addEffect(descriptionTextArea,0);
         // 批量为按钮添加图标
         simpleTools.setLabeledImage(new Labeled[]{alterButton, deleteButton, checkButton},
                 new String[]{"src/BookManageSystem/images/edit.png", "src/BookManageSystem/images/delete.png", "src/BookManageSystem/images/find.png"},

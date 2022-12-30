@@ -2,12 +2,22 @@ package BookManageSystem.controller;
 
 import BookManageSystem.MainApp;
 import BookManageSystem.tools.SimpleTools;
+import javafx.animation.FadeTransition;
+import javafx.animation.ScaleTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.AudioClip;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class LogupFrameController {
     private SimpleTools simpleTools = new SimpleTools();
@@ -33,6 +43,9 @@ public class LogupFrameController {
     private Button logupButton;
 
     @FXML
+    private AnchorPane mainPane;
+
+    @FXML
     private Label userNameLabel;
 
     @FXML
@@ -45,6 +58,9 @@ public class LogupFrameController {
     private Label passwordLabel;
 
     public void initialize() {
+        addEffect(logupButton,1);
+        addEffect(resetButton,1);
+        addEffect(mainPane,0);
         simpleTools.setLabeledImage(
                 new Labeled[]{logupButton, resetButton},
                 new String[]{"src/BookManageSystem/images/login.png","src/BookManageSystem/images/reset.png"},
@@ -62,6 +78,48 @@ public class LogupFrameController {
             // 如果登录成功则跳转到主界面
             new MainApp().initMainFrame();
         }
+    }
+    public void addEffect(Node node,int i){
+
+        node.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                //位置
+                double x = mouseEvent.getSceneX();
+                double y = mouseEvent.getSceneY();
+
+                if (i == 1){
+                    AudioClip audioClip = new AudioClip(getClass().getResource("/sounds/click.wav").toString());
+                    audioClip.play();
+                }
+                Circle circle = new Circle(x,y,5);
+                circle.setStroke(Color.rgb(33,84,150));
+                circle.setFill(Color.color(0,0,0,0));
+                circle.setStrokeWidth(2);
+                mainPane.getChildren().add(circle);
+
+                ScaleTransition st = new ScaleTransition();
+                st.setNode(circle);
+                st.setFromX(0);
+                st.setFromY(0);
+                //3 动画大小
+                st.setToX(3);
+                st.setToY(3);
+                //0.5s 动画时间
+                st.setDuration(Duration.seconds(0.5));
+                FadeTransition ft = new FadeTransition();
+                ft.setNode(circle);
+                ft.setFromValue(1);
+                ft.setToValue(0);
+
+                ft.setDuration(Duration.seconds(0.5));
+                st.play();
+                ft.play();
+                ft.setOnFinished(event -> {
+                    mainPane.getChildren().remove(circle);
+                });
+            }
+        });
     }
 
     // “重置”按钮的事件监听器方法
