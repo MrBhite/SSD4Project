@@ -19,7 +19,7 @@
                         </ImageView>
                         <VBox alignment="TOP_CENTER" prefHeight="169.0" prefWidth="355.0" spacing="20.0">
                             <children>
-                                <Label text="惰惰龟图书管理系统">
+                                <Label text="图书管理系统">
                                     <font>
                                         <Font size="32.0"/>
                                     </font>

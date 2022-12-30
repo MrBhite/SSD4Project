@@ -101,12 +101,12 @@ public class MainFrameController {
     }
 
     public void addClickEffect(Node node ,int i){
-
         node.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
             @Override
             public void handle(MouseEvent mouseEvent) {
-
                 if (i == 1){
+                    System.out.println("02");
                     AudioClip audioClip = new AudioClip(getClass().getResource("/sounds/click.wav").toString());
                     audioClip.play();
                 }

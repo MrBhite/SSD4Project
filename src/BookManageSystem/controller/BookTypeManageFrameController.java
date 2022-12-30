@@ -13,7 +13,6 @@ import javafx.scene.control.*;
  * @author lck100
  */
 public class BookTypeManageFrameController {
-    public Button checkButton;
     private SimpleTools simpleTools = new SimpleTools();
     private BookTypeDao bookTypeDao = new BookTypeDao();
 

@@ -36,7 +36,7 @@ public class SoftInformationFrameController {
         // 初始化链接组件的超链接
         hyperlink.setText("相关GitHub链接");
         // 设置图片
-        imageView.setImage(new Image("file:src/BookManageSystem/images/panda.png"));
+        imageView.setImage(new Image("file:src/BookManageSystem/images/logo.png"));
     }
 
     // “关闭”按钮的事件监听器
@@ -47,6 +47,6 @@ public class SoftInformationFrameController {
     // 超链接的事件监听器
     public void hyperlinkEvent(ActionEvent event) throws URISyntaxException, IOException {
         // 调用电脑本地的浏览器打开网址
-        Desktop.getDesktop().browse(new URI("https://github.com/lck100/JavaExerciseProject/tree/master/1.%E7%AE%A1%E5%AE%B6%E5%A9%86%E7%B3%BB%E7%BB%9F/%E7%AE%A1%E5%AE%B6%E5%A9%86%E7%B3%BB%E7%BB%9F%EF%BC%88JavaFX%E7%89%88%EF%BC%89"));
+        Desktop.getDesktop().browse(new URI("#"));
     }
 }
